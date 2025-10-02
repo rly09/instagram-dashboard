@@ -37,7 +37,7 @@ class _DashboardPageState extends State<DashboardPage> {
     setState(() {
       loading = true;
     });
-    const url = 'http://127.0.0.1:8000/profiles'; // Replace with your backend URL
+    const url = 'http://127.0.0.1:8000/profiles';
     try {
       final response = await http.get(Uri.parse(url));
       if (response.statusCode == 200) {
@@ -84,7 +84,6 @@ class _DashboardPageState extends State<DashboardPage> {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-              // Search bar
               TextField(
                 decoration: InputDecoration(
                   hintText: 'Search by username...',
@@ -103,7 +102,6 @@ class _DashboardPageState extends State<DashboardPage> {
                 },
               ),
               const SizedBox(height: 20),
-              // Table
               Expanded(
                 child: loading
                     ? const Center(
